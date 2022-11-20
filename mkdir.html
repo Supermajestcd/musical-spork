@@ -19,38 +19,36 @@
 
 <head>
 <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
-<title>ProjectHelper Task</title>
+<title>Mkdir Task</title>
 </head>
 
 <body>
 
-<h2>ProjectHelper</h2>
-<p><em>Since Ant 1.8.2</em></p>
+<h2 id="mkdir">Mkdir</h2>
 <h3>Description</h3>
-<p>This task is provided for the purpose of allowing the user to install a different ProjectHelper
-at run time.</p>
-<p>The helpers will be added after all the already registered helpers, but before the default one
-(<code>ProjectHelper2</code>)</p>
-<p>See the description of Apache Ant's <a href="../projecthelper.html">Project Helper</a> for more
-information.</p>
+<p>Creates a directory. Also non-existent parent directories are created, when necessary. Does
+nothing if the directory already exists.</p>
+<h3>Parameters</h3>
+<table class="attr">
+  <tr>
+    <th scope="col">Attribute</th>
+    <th scope="col">Description</th>
+    <th scope="col">Required</th>
+  </tr>
+  <tr>
+    <td>dir</td>
+    <td>the directory to create.</td>
+    <td>Yes</td>
+  </tr>
+</table>
 
-<h3>Parameters specified as nested elements</h3>
+<h3>Examples</h3>
 
-<p>You may specify many configured <code class="code">org.apache.tools.ant.ProjectHelper</code>
-instances.</p>
+<p>Create a directory <code>${dist}</code>.</p>
+<pre>&lt;mkdir dir=&quot;${dist}&quot;/&gt;</pre>
 
-<h3>Example</h3>
-
-<p>Install a custom ProjectHelper implementation (assuming <code class="code">MyProjectHelper
-extends ProjectHelper</code>):</p>
-
-<pre>
-&lt;typedef classname="org.example.MyProjectHelper"
-         name="myprojecthelper"/>
-&lt;projecthelper>
-  &lt;myprojecthelper/>
-&lt;/projecthelper>
-</pre>
+<p>Create a directory <code>${dist}/lib</code>.</p>
+<pre>&lt;mkdir dir=&quot;${dist}/lib&quot;/&gt;</pre>
 
 </body>
 </html>
